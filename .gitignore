@@ -1,0 +1,71 @@
+# ==========================================
+# GLOBAL / ENVIRONMENT WIDE RULES
+# ==========================================
+node_modules/
+.env
+.env.*
+.env.local
+dist/
+.next/
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.tsbuildinfo
+next-env.d.ts
+coverage/
+.claude
+
+# ==========================================
+# BACKEND RULES
+# ==========================================
+
+# Dependencies
+backend/node_modules/
+
+# Build
+backend/dist/
+
+# Environment
+backend/.env
+backend/.env.*
+
+# Logs
+backend/logs/
+backend/*.log
+backend/npm-debug.log*
+
+# Test coverage
+backend/coverage/
+
+# TypeScript
+backend/*.tsbuildinfo
+
+
+# ==========================================
+# FRONTEND RULES
+# ==========================================
+
+# Dependencies
+frontend/node_modules/
+
+# Next.js
+frontend/.next/
+frontend/out/
+
+# Environment
+frontend/.env
+frontend/.env.*
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# Logs
+frontend/*.log
+frontend/npm-debug.log*
+
+# TypeScript
+frontend/*.tsbuildinfo
+frontend/next-env.d.ts
