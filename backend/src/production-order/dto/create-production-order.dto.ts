@@ -1,0 +1,15 @@
+import { IsString, IsNotEmpty, IsNumber, Min } from 'class-validator';
+
+export class CreateProductionOrderDto {
+  @IsString()
+  @IsNotEmpty()
+  productId: string;
+
+  @IsString()
+  @IsNotEmpty()
+  productName: string;
+
+  @IsNumber()
+  @Min(1)
+  quantity: number;
+}
