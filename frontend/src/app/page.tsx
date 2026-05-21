@@ -19,6 +19,7 @@ export default function LoginPage() {
     setError('');
     try {
       const res = await authService.login({ loginId, password });
+      console.log('Login response:', res);
       login({ token: res.access_token, role: res.role, id: res.id });
       router.push(`/${res.role}`);
     } catch {
