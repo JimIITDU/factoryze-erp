@@ -15,11 +15,12 @@ const colorMap: Record<string, string> = {
   inactive: 'bg-gray-100 text-gray-800',
 };
 
-export default function Badge({ status }: BadgeProps) {
-  const color = colorMap[status] ?? 'bg-gray-100 text-gray-700';
+export default function Badge({ status }: { status?: string }) {
+  if (!status) return null;
+
   return (
-    <span className={`px-2 py-1 rounded-full text-xs font-semibold ${color}`}>
-      {status.replace('_', ' ')}
+    <span>
+      {status.replace("_", " ")}
     </span>
   );
 }
