@@ -12,15 +12,14 @@ export class DistributorController {
   constructor(private readonly distributorService: DistributorService) {}
 
   @Post()
-  @Roles(Role.MANUFACTURER)
-  create(@Body() dto: CreateDistributorDto, @Request() req: any) {
-    return this.distributorService.create(dto, req.user.id);
+  create(@Body() dto: CreateDistributorDto) {
+    return this.distributorService.create(dto);
   }
 
   @Get()
   @Roles(Role.MANUFACTURER)
-  findAll(@Request() req: any) {
-    return this.distributorService.findAll(req.user.id);
+  findAll() {
+    return this.distributorService.findAll();
   }
 
   @Get(':id')
