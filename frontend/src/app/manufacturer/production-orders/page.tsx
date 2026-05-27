@@ -12,7 +12,11 @@ export default function ProductionOrdersPage() {
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({ productId: '', productName: '', quantity: 1 });
 
-  const fetch = () => productionOrderService.getAll().then(setOrders).finally(() => setLoading(false));
+  const fetch = () =>
+    productionOrderService.getAll()
+      .then((data) => setOrders(Array.isArray(data) ? data : []))
+      .catch(() => setOrders([]))
+      .finally(() => setLoading(false));
   useEffect(() => { fetch(); }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {

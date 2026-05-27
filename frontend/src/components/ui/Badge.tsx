@@ -1,5 +1,3 @@
-type BadgeProps = { status: string };
-
 const colorMap: Record<string, string> = {
   requested: 'bg-yellow-100 text-yellow-800',
   accepted: 'bg-green-100 text-green-800',
@@ -18,9 +16,13 @@ const colorMap: Record<string, string> = {
 export default function Badge({ status }: { status?: string }) {
   if (!status) return null;
 
+  const normalized = status.trim();
+  const className = colorMap[normalized] ?? 'bg-gray-100 text-gray-800';
+
   return (
-    <span>
-      {status.replace("_", " ")}
+    <span className={`inline-flex items-center rounded-full px-2 py-1 text-xs font-medium ${className}`}>
+      {normalized.replaceAll('_', ' ')}
     </span>
   );
 }
+

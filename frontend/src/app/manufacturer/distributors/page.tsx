@@ -7,7 +7,7 @@ import PageWrapper from '@/components/layout/PageWrapper';
 import Badge from '@/components/ui/Badge';
 
 export default function DistributorsPage() {
-  const { distributors, loading, refetch } = useDistributors();
+  const { distributors = [], loading, refetch } = useDistributors();
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({ name: '', loginId: '', password: '' });
   const [error, setError] = useState('');
